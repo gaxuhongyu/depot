@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  default_scope :order => 'title'
   attr_accessible :descrption, :image_url, :price, :title
   validates :title, :descrption, :image_url, :presence => true #表示不能为空
   validates :price, :numericality => {:greater_than_or_equal_to => 0.01} 
